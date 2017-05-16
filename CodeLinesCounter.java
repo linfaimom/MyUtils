@@ -28,6 +28,7 @@ public class CodeLinesCounter {
         File path = new File(pathName);
         if (path.isFile()) {
             total += getOneFileCodeLines(path.getAbsolutePath());
+            System.out.println(path.getName() + " : " + total);
         } else if (path.isDirectory()) {
             File[] fileLists = path.listFiles(file -> file.getName().endsWith(suffix));
             for (File file : fileLists) {
